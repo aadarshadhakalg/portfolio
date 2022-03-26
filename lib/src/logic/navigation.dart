@@ -5,7 +5,7 @@ import 'package:riverpod/riverpod.dart';
 final navigationProvider = StateNotifierProvider<Route, String>((_) => Route());
 
 class Route extends StateNotifier<String> {
-  Route() : super('/');
+  Route() : super('/') {}
 
   void goToHome() => setUrl(path: '/', name: 'Home');
   void goToAbout() => setUrl(path: '/about', name: 'About');
