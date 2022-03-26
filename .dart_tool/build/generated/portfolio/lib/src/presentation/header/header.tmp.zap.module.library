@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["zap|lib/internal/dsl.dart","portfolio|lib/src/presentation/header/navigation.tmp.zap.api.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html"],"hasMain":false}

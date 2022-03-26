@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["meta|lib/meta.dart","riverpod|lib/src/future_provider.dart","riverpod|lib/src/stream_provider.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

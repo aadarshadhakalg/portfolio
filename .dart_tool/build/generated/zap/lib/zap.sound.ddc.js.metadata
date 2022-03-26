@@ -1,1 +1,0 @@
-{"version":"1.0.2","name":"packages/zap/zap","closureName":"load__packages__zap__zap","sourceMapUri":"packages/zap/zap.sound.ddc.js.map","moduleUri":"packages/zap/zap.sound.ddc.js","fullDillUri":null,"libraries":[{"name":"zap","importUri":"package:zap/zap.dart","fileUri":"/packages/zap/zap.dart","partUris":[]}],"soundNullSafety":true}

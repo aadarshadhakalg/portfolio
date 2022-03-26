@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["state_notifier|lib/state_notifier.dart","riverpod|lib/src/internals.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async"],"hasMain":false}

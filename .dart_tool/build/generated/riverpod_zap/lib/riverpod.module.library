@@ -1,1 +1,0 @@
-{"isEntrypoint":true,"deps":["riverpod|lib/riverpod.dart","zap|lib/zap.dart","riverpod_zap|lib/src/context.dart","riverpod_zap|lib/src/watchable.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

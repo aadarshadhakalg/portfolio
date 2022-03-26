@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["zap|lib/internal/dsl.dart","riverpod_zap|lib/riverpod.dart","portfolio|lib/src/logic/navigation.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html"],"hasMain":false}

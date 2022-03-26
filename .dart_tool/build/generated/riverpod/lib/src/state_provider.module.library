@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["meta|lib/meta.dart","riverpod|lib/riverpod.dart","riverpod|lib/src/internals.dart"],"parts":["riverpod|lib/src/state_provider/auto_dispose.dart","riverpod|lib/src/state_provider/base.dart"],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

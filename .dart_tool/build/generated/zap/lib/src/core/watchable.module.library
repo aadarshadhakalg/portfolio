@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["zap|lib/src/core/snapshot.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async"],"hasMain":false}
