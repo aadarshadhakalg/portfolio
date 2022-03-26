@@ -1,0 +1,1 @@
+{"isEntrypoint":false,"deps":["zap|lib/zap.dart","portfolio|lib/src/logic/navigation.dart","riverpod_zap|lib/riverpod.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html","core"],"hasMain":false}

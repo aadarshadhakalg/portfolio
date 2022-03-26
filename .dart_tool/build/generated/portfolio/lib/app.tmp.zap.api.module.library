@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["zap|lib/internal/dsl.dart","riverpod_zap|lib/riverpod.dart","portfolio|lib/src/presentation/header/header.tmp.zap.api.dart","portfolio|lib/src/presentation/body/body.tmp.zap.api.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html"],"hasMain":false}

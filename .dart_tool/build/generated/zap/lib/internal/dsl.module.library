@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["zap|lib/src/core/snapshot.dart","zap|lib/src/core/watchable.dart","zap|lib/zap.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async"],"hasMain":false}

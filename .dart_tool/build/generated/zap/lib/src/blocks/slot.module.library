@@ -1,0 +1,1 @@
+{"isEntrypoint":false,"deps":["zap|lib/src/core/component.dart","zap|lib/src/core/fragment.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html"],"hasMain":false}

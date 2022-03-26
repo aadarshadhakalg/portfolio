@@ -1,0 +1,1 @@
+{"isEntrypoint":false,"deps":["zap|lib/zap.dart","portfolio|lib/src/logic/navigation.dart","portfolio|lib/src/presentation/pages/homepage.zap.dart","portfolio|lib/src/presentation/pages/aboutpage.zap.dart","portfolio|lib/src/presentation/pages/blogpage.zap.dart","riverpod_zap|lib/riverpod.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["core","html"],"hasMain":false}
