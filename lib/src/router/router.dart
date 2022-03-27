@@ -1,10 +1,9 @@
 import 'dart:html';
-
 import 'package:meta/meta.dart';
 import 'package:riverpod/riverpod.dart';
 
-final navigationProvider =
-    StateNotifierProvider<Router, Route>((_) => Router());
+final navigationProvider = StateNotifierProvider<Router, Route>(
+    (_) => Router(initialRoute: Route(path: Uri.parse(window.location.href))));
 
 class Router extends StateNotifier<Route> {
   Router({Route? initialRoute})

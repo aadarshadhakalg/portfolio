@@ -1,6 +1,6 @@
 <script>
     import "package:riverpod_zap/riverpod.dart";
-    import "../../logic/router.dart";
+    import "../../router/router.dart";
 
     final provider = self.read(navigationProvider.notifier);
 
@@ -24,10 +24,10 @@
 
 <header>
     <nav>
-        <a on:click={goToHome} title="Home">Home</a>
-        <a on:click={goToBlog} title="blogs">Blog</a>
-        <a on:click={goToAbout} title="About me">About</a>
-        <a on:click={goToProject} title="My Projects">Projects</a>
+        <a href="javascript:void(0);" on:click={goToHome} title="Home">Home</a>
+        <a  href="javascript:void(0);"  on:click|preventDefault={goToBlog} title="blogs">Blog</a>
+        <a  href="javascript:void(0);" on:click={goToAbout} title="About me">About</a>
+        <a href="javascript:void(0);"  on:click={goToProject} title="My Projects">Projects</a>
     </nav>
 </header>
 

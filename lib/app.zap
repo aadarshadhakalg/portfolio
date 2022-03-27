@@ -1,14 +1,15 @@
 <script>
   import "package:riverpod_zap/riverpod.dart";
-
+  import "src/router/router.zap";
   import "src/presentation/header/header.zap";
   import "src/presentation/body/body.zap";
-  import "src/logic/router.dart";
+  import "src/presentation/footer/footer.zap";
+
 </script>
 
 <riverpod-scope>
+  <router/>
   <header />
-
   <body />
+  <footer />
 </riverpod-scope>
-<footer />
