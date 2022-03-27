@@ -11,8 +11,8 @@ class Router extends StateNotifier<Route> {
       : super(initialRoute ?? Route(name: 'Home', path: Uri.base)) {
     goToNamed(path: Uri.parse(window.location.href).path);
     window.onPopState.listen((event) {
-      print(event.state);
-      // goToNamed(route: event.state);
+      var target = event.target as Window;
+      state = Route(path: Uri.parse(target.location.href));
     });
   }
 
@@ -24,11 +24,15 @@ class Router extends StateNotifier<Route> {
 
   void goToNamed({required String path, Map? data}) {
     Route route = Route.fromPath(path: path);
-    if (registeredRoute.contains(route)) {
-      window.history
-          .pushState(data, '${route.name} - Aadarsha Dhakal', '$route');
+    // if (registeredRoute.contains(roSute)) {
+    print(state.path.path);
+    print(route.path.path);
+    if (state != route) {
       state = route;
+      window.history
+          .pushState(data, '${route.name} - Aadarsha Dhakal', '$path');
     }
+    // }
   }
 }
 
@@ -40,7 +44,12 @@ class Route {
 
   factory Route.fromPath({required String path, String? name}) {
     return Route(
-      path: Uri(host: window.location.host, path: path),
+      path: Uri(
+        scheme: Uri.base.scheme,
+        host: Uri.base.host,
+        port: Uri.base.port,
+        path: path,
+      ),
     );
   }
 
@@ -53,7 +62,7 @@ class Route {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Route && other.path == path;
+    return other is Route && other.path.path == path.path;
   }
 
   @override

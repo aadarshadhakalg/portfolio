@@ -1,13 +1,14 @@
 <script>
-    import "../../logic/router.dart";
-    import 'navigation.zap';
+import "package:riverpod_zap/riverpod.dart";
+  import "../../logic/router.dart";
+  import 'navigation.zap';
 
-  final provider = self.read(navigationProvider.notifier);
+  final routeProvider = self.read(navigationProvider.notifier);
 
-  provider.addRoute(Route.fromPath(path: '/',name:'Home'),);
-  provider.addRoute(Route.fromPath(path: '/about',name:'About'),);
-  provider.addRoute(Route.fromPath(path: '/blog',name:'Blog'),);
-  provider.addRoute(Route.fromPath(path: '/projects',name:'Projects'),);
+  routeProvider.addRoute(Route.fromPath(path: '/',name:'Home'),);
+  routeProvider.addRoute(Route.fromPath(path: '/about',name:'About'),);
+  routeProvider.addRoute(Route.fromPath(path: '/blog',name:'Blog'),);
+  routeProvider.addRoute(Route.fromPath(path: '/projects',name:'Projects'),);
 
 </script>
 

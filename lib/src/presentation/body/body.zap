@@ -4,16 +4,21 @@
     import "../pages/homepage.zap";
     import "../pages/aboutpage.zap";
     import "../pages/blogpage.zap";
+    import "../pages/projectspage.zap";
 
     var currentPage = watch(self.use(navigationProvider));
 </script>
 
-{#if currentPage == "/"}
+{#if currentPage.path.path == "/"}
     <homepage />
 {/if}
-{#if currentPage == "/about"}
+{#if currentPage.path.path == "/about"}
     <aboutpage />
 {/if}
-{#if currentPage == "/blog"}
+{#if currentPage.path.path == "/blog"}
     <blogpage />
+{/if}
+
+{#if currentPage.path.path == "/project"}
+    <projectspage />
 {/if}

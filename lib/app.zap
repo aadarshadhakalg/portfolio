@@ -3,6 +3,7 @@
 
   import "src/presentation/header/header.zap";
   import "src/presentation/body/body.zap";
+  import "src/logic/router.dart";
 </script>
 
 <riverpod-scope>

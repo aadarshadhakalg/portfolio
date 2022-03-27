@@ -25,9 +25,9 @@
 <header>
     <nav>
         <a on:click={goToHome} title="Home">Home</a>
-        <a on:click={goToAbout} title="blogs">Blog</a>
-        <a on:click={goToProject} title="About me">About</a>
-        <a on:click={goToBlog} title="My Projects">Projects</a>
+        <a on:click={goToBlog} title="blogs">Blog</a>
+        <a on:click={goToAbout} title="About me">About</a>
+        <a on:click={goToProject} title="My Projects">Projects</a>
     </nav>
 </header>
 
