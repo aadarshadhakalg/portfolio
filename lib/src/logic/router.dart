@@ -9,14 +9,15 @@ final navigationProvider =
 class Router extends StateNotifier<Route> {
   Router({Route? initialRoute})
       : super(initialRoute ?? Route(name: 'Home', path: Uri.base)) {
-    goToNamed(path: Uri.parse(window.location.href).path);
     window.onPopState.listen((event) {
       var target = event.target as Window;
       state = Route(path: Uri.parse(target.location.href));
     });
   }
 
-  Set registeredRoute = {};
+  Set<Route> registeredRoute = {
+    Route.fromPath(path: '/404', name: 'Not Found'),
+  };
 
   void addRoute(Route route) {
     registeredRoute.add(route);
@@ -24,15 +25,16 @@ class Router extends StateNotifier<Route> {
 
   void goToNamed({required String path, Map? data}) {
     Route route = Route.fromPath(path: path);
-    // if (registeredRoute.contains(roSute)) {
-    print(state.path.path);
-    print(route.path.path);
-    if (state != route) {
-      state = route;
-      window.history
-          .pushState(data, '${route.name} - Aadarsha Dhakal', '$path');
+    if (registeredRoute.contains(route)) {
+      if (state != route) {
+        state = route;
+        window.history
+            .pushState(data, '${route.name} - Aadarsha Dhakal', '$path');
+      }
+    } else {
+      state = Route.fromPath(path: '/404');
+      window.history.pushState(data, 'Not Found - Aadarsha Dhakal', '/404');
     }
-    // }
   }
 }
 

@@ -5,6 +5,7 @@
     import "../pages/aboutpage.zap";
     import "../pages/blogpage.zap";
     import "../pages/projectspage.zap";
+    import "../pages/notfound.zap";
 
     var currentPage = watch(self.use(navigationProvider));
 </script>
@@ -21,4 +22,8 @@
 
 {#if currentPage.path.path == "/project"}
     <projectspage />
+{/if}
+
+{#if currentPage.path.path == "/404"}
+    <notfound />
 {/if}
