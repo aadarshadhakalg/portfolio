@@ -8,3 +8,6 @@
     routeProvider.addRoute(Route.fromPath(path: '/project',name:'Projects'),);
     routeProvider.addRoute(Route.fromPath(path: '/blog',name:'Blog'),);
 </script>
+
+
+<slot></slot>

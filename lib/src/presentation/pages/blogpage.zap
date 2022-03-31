@@ -14,7 +14,7 @@
   {#for blog in blogs}
   <li>
     <div>
-      <a href="{blog.url}">{blog.path.substring(6)}</a>
+      <a href="{blog.url}">{blog.path.substring(6,blog.path.length - 3)}</a>
     </div>  
   </li>
   {/for}

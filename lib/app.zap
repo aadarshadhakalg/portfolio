@@ -8,8 +8,9 @@
 </script>
 
 <riverpod-scope>
-  <router/>
-  <header />
-  <body />
-  <footer />
+  <router>
+    <header />
+    <body />
+    <footer />
+  </router>
 </riverpod-scope>

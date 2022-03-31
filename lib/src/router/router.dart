@@ -1,71 +1,107 @@
 import 'dart:html';
-import 'package:meta/meta.dart';
 import 'package:riverpod/riverpod.dart';
+import 'package:meta/meta.dart';
+
+part 'route.dart';
 
 final navigationProvider = StateNotifierProvider<Router, Route>(
-    (_) => Router(initialRoute: Route(path: Uri.parse(window.location.href))));
+  (_) => Router(
+    initialRoute: Route.fromPath(path: Uri.parse(window.location.href).path),
+  ),
+);
 
 class Router extends StateNotifier<Route> {
   Router({Route? initialRoute})
-      : super(initialRoute ?? Route(name: 'Home', path: Uri.base)) {
+      : super(
+          initialRoute ?? Route.fromPath(name: 'Home', path: Uri.base.path),
+        ) {
     window.onPopState.listen((event) {
-      var target = event.target as Window;
-      state = Route(path: Uri.parse(target.location.href));
+      _onPopState(event);
     });
   }
 
-  Set<Route> registeredRoute = {
+  String _siteName = document.title;
+
+  // Set that stores all the registered routes.
+  Set<Route> _registeredRoutes = {
     Route.fromPath(path: '/404', name: 'Not Found'),
   };
 
+  // Get the current route state
+  Route get currentRoute => state;
+
+  //Get all registered routes
+  Set<Route> get registeredRoutes => _registeredRoutes;
+
+  // Register a new route
   void addRoute(Route route) {
-    registeredRoute.add(route);
+    _registerRoute(route);
   }
 
-  void goToNamed({required String path, Map? data}) {
+  // Check is a route is registered.
+  bool isRouteRegistered(Route route) {
+    if (_registeredRoutes.contains(route)) {
+      return true;
+    }
+    return false;
+  }
+
+  // Unregister a route
+  void removeRoute(Route route) {
+    _unRegisterRoute(route);
+  }
+
+  // Go to a route
+  void goToNamed(
+      {required String path,
+      Map<String, dynamic>? data,
+      bool replace = false}) {
+    _onPushState(path, data);
+  }
+
+  /// Private Helpers Methods
+  void _registerRoute(Route route) {
+    _registeredRoutes.add(route);
+  }
+
+  bool _unRegisterRoute(Route route) {
+    if (isRouteRegistered(route)) {
+      _registeredRoutes.remove(route);
+      return true;
+    } else {
+      window.console.warn('Route not registered thus not removed.');
+      return false;
+    }
+  }
+
+  void _onPopState(PopStateEvent event) {
+    var target = event.target as Window;
+    state = _registeredRoutes.singleWhere(
+      (element) =>
+          element ==
+          Route(
+            uri: Uri.parse(target.location.href),
+          ),
+    );
+    document.title = '${state.name} - $_siteName';
+  }
+
+  void _onPushState(String path, Map<String, dynamic>? data,
+      [bool replace = false]) {
     Route route = Route.fromPath(path: path);
-    if (registeredRoute.contains(route)) {
+    if (_registeredRoutes.contains(route)) {
       if (state != route) {
-        state = route;
-        window.history
-            .pushState(data, '${route.name} - Aadarsha Dhakal', '$path');
+        state = _registeredRoutes.singleWhere((element) => element == route);
+        document.title = '${state.name} - $_siteName';
+        if (replace) {
+          window.history.replaceState(data, '${state.name}', '${state.path}');
+        } else {
+          window.history.pushState(data, '${state.name}', '${state.path}');
+        }
       }
     } else {
       state = Route.fromPath(path: '/404');
-      window.history.pushState(data, 'Not Found - Aadarsha Dhakal', '/404');
+      window.history.pushState(data, 'Not Found - $_siteName', '/404');
     }
   }
-}
-
-@immutable
-class Route {
-  final Uri path;
-  final String? name;
-  const Route({this.name, required this.path});
-
-  factory Route.fromPath({required String path, String? name}) {
-    return Route(
-      path: Uri(
-        scheme: Uri.base.scheme,
-        host: Uri.base.host,
-        port: Uri.base.port,
-        path: path,
-      ),
-    );
-  }
-
-  @override
-  String toString() {
-    return path.path;
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Route && other.path.path == path.path;
-  }
-
-  @override
-  int get hashCode => path.hashCode;
 }
