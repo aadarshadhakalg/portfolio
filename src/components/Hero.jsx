@@ -4,7 +4,7 @@ import AnimationWrapper from './AnimationWrapper';
 const Hero = () => {
     return (
         <section id="hero" style={{ paddingTop: '6rem', paddingBottom: '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', justifyContent: 'center' }} className="hero-avatar-container">
                 <div className="pixelated-container">
                     <img
                         src="/avatar.jpeg"
@@ -31,8 +31,21 @@ const Hero = () => {
             >
                 Book a time with me
             </a>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    #hero {
+                        padding-top: 3rem !important;
+                        text-align: center;
+                    }
+                    #hero p {
+                        margin: 0 auto;
+                    }
+                }
+            `}</style>
         </section>
     );
 };
 
 export default Hero;
+

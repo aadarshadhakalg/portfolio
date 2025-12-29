@@ -6,7 +6,7 @@ const AboutPage = () => {
     return (
         <AnimationWrapper delay={0.2}>
             <Section title="The About Side" id="about">
-                <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap' }} className="about-header">
                     <div className="pixelated-container" style={{ flexShrink: 0 }}>
                         <img src="/avatar.jpeg" alt="Aadarsha Dhakal" className="pixelated-image" />
                         <div className="pixel-overlay"></div>
@@ -62,9 +62,23 @@ const AboutPage = () => {
                         ))}
                     </ul>
                 </div>
+
+                <style>{`
+                    @media (max-width: 768px) {
+                        .about-header {
+                            flex-direction: column;
+                            align-items: center !important;
+                            text-align: center;
+                        }
+                        .about-header > div:last-child {
+                            flex: none !important;
+                        }
+                    }
+                `}</style>
             </Section>
         </AnimationWrapper>
     );
 };
 
 export default AboutPage;
+

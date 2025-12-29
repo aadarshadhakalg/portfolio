@@ -84,7 +84,7 @@ const ProjectsPage = () => {
     return (
         <>
             <Section title="Own Projects" id="projects">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '3rem' }} className="projects-grid">
                     {projects.map((proj, idx) => (
                         <AnimationWrapper key={idx} delay={idx * 0.1} y={30}>
                             <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -99,7 +99,7 @@ const ProjectsPage = () => {
             </Section>
 
             <Section title="Technical Skillset" id="skills" bgVariant>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '3rem' }} className="skills-grid">
                     {skills.map((skill, idx) => (
                         <AnimationWrapper key={idx} delay={idx * 0.1}>
                             <div>
@@ -112,8 +112,22 @@ const ProjectsPage = () => {
                     ))}
                 </div>
             </Section>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    .projects-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 2rem !important;
+                    }
+                    .skills-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 2rem !important;
+                    }
+                }
+            `}</style>
         </>
     );
 };
 
 export default ProjectsPage;
+
