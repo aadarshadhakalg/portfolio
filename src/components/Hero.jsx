@@ -23,6 +23,14 @@ const Hero = () => {
             <p className="secondary-text" style={{ maxWidth: '600px', fontSize: '1.1rem' }}>
                 Specializing in Linux Virtualization, Ceph, Proxmox, and Openstack. Previously a Mobile App Developer, now focused on architecting cloud-native infrastructure.
             </p>
+            <a
+                href="https://calendar.app.google/KKPeMQb2TdQyUg9q8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button"
+            >
+                Book a time with me
+            </a>
         </section>
     );
 };

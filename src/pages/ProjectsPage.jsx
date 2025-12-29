@@ -5,28 +5,69 @@ import AnimationWrapper from '../components/AnimationWrapper';
 const ProjectsPage = () => {
     const projects = [
         {
+            title: "Dart Playground",
+            description: "Dart code editor and compiler for mobile phones. Developed using Flutter and integrated with custom highlighters.",
+            tech: ["Flutter", "Dart", "Codemagic"],
+            link: "#"
+        },
+        {
+            title: "Himalayan Roadies Audition App",
+            description: "The official audition app for the popular reality TV show in Nepal. Handled video uploads and secure judge voting.",
+            tech: ["Flutter", "Firebase", "Node.js"],
+            link: "#"
+        },
+        {
+            title: "The Voice of Nepal Audition App",
+            description: "Real-time audition platform for the international singing franchise's Nepal chapter.",
+            tech: ["Flutter", "REST APIs", "AWS"],
+            link: "#"
+        },
+        {
             title: "Code Editor Flutter Plugin",
-            description: "Null Safety Migration and performance improvements for mobile code editing.",
+            description: "Open-source plugin to add code editing capabilities with syntax highlighting to any Flutter app.",
+            tech: ["Dart", "Open Source"],
+            link: "https://github.com/aadarshadhakalg"
+        },
+        {
+            title: "EatWell Toolkit",
+            description: "Comprehensive calorie tracker and nutrition management application.",
+            tech: ["Flutter", "SQLite"],
             link: "#"
         },
         {
-            title: "Himalayan Roadies & The Voice of Nepal",
-            description: "Official audition applications for major TV franchises in Nepal. Managed thousands of users and video submissions.",
+            title: "Huffman Encoding Visualizer",
+            description: "An educational tool to visualize the Huffman coding algorithm in real-time.",
+            tech: ["Flutter", "Algorithms"],
             link: "#"
         },
         {
-            title: "Scout (Opensource Time Tracker)",
-            description: "A privacy-focused time tracking tool for developers and freelancers.",
+            title: "CMakeNew",
+            description: "A developer CLI tool for scaffolding new CMake projects with best-practice structures.",
+            tech: ["C++", "CLI"],
+            link: "#"
+        },
+        {
+            title: "Scout",
+            description: "Open-source time-tracking and productivity application for focused work.",
+            tech: ["Flutter", "Desktop"],
             link: "#"
         },
         {
             title: "Flutter Screenshot X",
-            description: "Utility for capturing and manipulating screenshots within Flutter applications.",
+            description: "A desktop-specific plugin to capture and manipulate screenshots in multi-window environments.",
+            tech: ["Flutter", "C++", "Platform Channels"],
             link: "#"
         },
         {
-            title: "NFT Listing Website",
-            description: "A platform for listing and browsing NFTs, built with Django.",
+            title: "E-bidhya",
+            description: "Online learning management system mobile app serving thousands of students.",
+            tech: ["Flutter", "Moodle"],
+            link: "#"
+        },
+        {
+            title: "Nepal's Next Top Model App",
+            description: "Full-stack mobile application for the fashion reality series auditions and voting.",
+            tech: ["Flutter", "PHP", "MySQL"],
             link: "#"
         }
     ];
