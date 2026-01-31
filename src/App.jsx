@@ -7,6 +7,7 @@ import ExperiencePage from './pages/ExperiencePage';
 import ProjectsPage from './pages/ProjectsPage';
 import BlogPage from './pages/BlogPage';
 import MediaPage from './pages/MediaPage';
+import Unsubscribe from './pages/Unsubscribe';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/media" element={<MediaPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/unsubscribe" element={<Unsubscribe />} />
             </Routes>
         </Layout>
     );
