@@ -4,7 +4,7 @@ import AnimationWrapper from './AnimationWrapper';
 const Hero = () => {
     return (
         <section id="hero" style={{ paddingTop: '6rem', paddingBottom: '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', justifyContent: 'center' }} className="hero-avatar-container">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem' }} className="hero-avatar-container">
                 <div className="pixelated-container">
                     <img
                         src="/avatar.jpeg"

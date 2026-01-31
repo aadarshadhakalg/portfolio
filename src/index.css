@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@300;400&display=swap');
+
+
 :root {
   --font-serif: 'EB Garamond', serif;
   --font-sans: 'Inter', sans-serif;
@@ -69,7 +72,6 @@ section {
   font-size: 0.85rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@300;400&display=swap');
 
 /* Pixelated Avatar Effect */
 .pixelated-container {
@@ -166,6 +168,10 @@ section {
   .pixelated-container {
     width: 100px;
     height: 100px;
+  }
+
+  .hero-avatar-container {
+    justify-content: center;
   }
 
   .cta-button {

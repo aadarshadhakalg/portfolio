@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from '../components/Section';
 import AnimationWrapper from '../components/AnimationWrapper';
 
@@ -6,20 +5,26 @@ const AboutPage = () => {
     return (
         <AnimationWrapper delay={0.2}>
             <Section title="The About Side" id="about">
-                <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap' }} className="about-header">
-                    <div className="pixelated-container" style={{ flexShrink: 0 }}>
-                        <img src="/avatar.jpeg" alt="Aadarsha Dhakal" className="pixelated-image" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem' }} className="hero-avatar-container">
+                    <div className="pixelated-container">
+                        <img
+                            src="/avatar.jpeg"
+                            alt="Aadarsha Dhakal"
+                            className="pixelated-image"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
                         <div className="pixel-overlay"></div>
                     </div>
-                    <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
-                            Self-motivated Infrastructure Engineer with a strong foundation in Linux Virtualization and Cloud Orchestration. My current focus lies in building and maintaining highly available storage and compute environments using Ceph and Openstack.
-                        </p>
-                    </div>
                 </div>
-                <p className="secondary-text">
-                    With a professional background in Mobile App Development (Dart/Flutter), I bring a unique "dev-first" perspective to infrastructure, focusing on automation, scalability, and developer experience. Having navigated different software companies, I've developed deep problem-solving skills and a strong commitment to work ethics. I am dedicated to architecting systems that not only serve the company but provide robust, scalable platforms for everyone.
-                </p>
+                <div style={{ flex: 1 }}>
+                    <p className="serif" style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>
+                        Self-motivated Infrastructure Engineer with a strong foundation in Linux Virtualization and Cloud Orchestration. My current focus lies in building and maintaining highly available storage and compute environments using Ceph and Openstack.
+                    </p>
+                    <p className="secondary-text">
+                        With a professional background in Mobile App Development (Dart/Flutter), I bring a unique "dev-first" perspective to infrastructure, focusing on automation, scalability, and developer experience. Having navigated different software companies, I've developed deep problem-solving skills and a strong commitment to work ethics. I am dedicated to architecting systems that not only serve the company but provide robust, scalable platforms for everyone.
+                    </p>
+                </div>
+                {/* </div> */}
 
                 <div style={{ marginTop: '4rem' }}>
                     <h3 className="serif" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Education</h3>
