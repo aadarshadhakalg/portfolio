@@ -164,13 +164,23 @@ const Unsubscribe = () => {
     };
 
     const handleNoEscape = () => {
-        const safeMargin = 100;
-        // Calculate bounds relative to the button's initial position or center
-        // Basic random move
-        const newX = (Math.random() - 0.5) * 400; // Move within 200px range
-        const newY = (Math.random() - 0.5) * 400;
+        const currentX = noBtnPos.x;
+        const currentY = noBtnPos.y;
+        const maxDist = 300;
 
-        setNoBtnPos({ x: newX, y: newY });
+        // Generate random position
+        let nextX = (Math.random() * maxDist * 2) - maxDist; // -300 to 300
+        let nextY = (Math.random() * maxDist * 2) - maxDist;
+
+        // Ensure minimum distance jump (100px) from current position
+        if (Math.abs(nextX - currentX) < 100) {
+            nextX = currentX + (nextX > currentX ? 100 : -100);
+        }
+        if (Math.abs(nextY - currentY) < 100) {
+            nextY = currentY + (nextY > currentY ? 100 : -100);
+        }
+
+        setNoBtnPos({ x: nextX, y: nextY });
     }
 
     const isFinalStage = step === FLOW_MESSAGES.length;
@@ -245,8 +255,10 @@ const Unsubscribe = () => {
 
                                 <motion.button
                                     animate={{ x: noBtnPos.x, y: noBtnPos.y }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                                    transition={{ type: "spring", stiffness: 500, damping: 15, mass: 0.5 }}
                                     onMouseEnter={handleNoEscape}
+                                    onTouchStart={handleNoEscape}
+                                    onClick={handleNoEscape}
                                     style={{
                                         padding: '1rem 3rem',
                                         background: 'transparent',
@@ -255,8 +267,9 @@ const Unsubscribe = () => {
                                         fontSize: '1.2rem',
                                         fontFamily: 'var(--font-mono)',
                                         cursor: 'pointer',
-                                        position: 'relative', // Changed to relative for simpler flex layout, transform handles move
-                                        letterSpacing: '1px'
+                                        position: 'relative',
+                                        letterSpacing: '1px',
+                                        zIndex: 20 // Ensure it sits above other things if it moves
                                     }}
                                 >
                                     NO
