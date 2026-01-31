@@ -24,7 +24,7 @@ const FLOW_MESSAGES = [
     }
 ];
 
-const Certificate = ({ username }) => {
+const Certificate = ({ username, isMobile }) => {
     const date = new Date().toLocaleDateString();
 
     return (
@@ -34,8 +34,8 @@ const Certificate = ({ username }) => {
             transition={{ duration: 0.8, type: "spring" }}
             style={{
                 background: '#fff',
-                padding: '2rem',
-                border: '10px double var(--text-primary)',
+                padding: isMobile ? '1rem' : '2rem',
+                border: isMobile ? '6px double var(--text-primary)' : '10px double var(--text-primary)',
                 maxWidth: '600px',
                 width: '100%',
                 color: '#111',
@@ -47,7 +47,7 @@ const Certificate = ({ username }) => {
         >
             <div style={{
                 border: '2px solid #111',
-                padding: '2rem',
+                padding: isMobile ? '1rem' : '2rem',
                 height: '100%'
             }}>
                 <motion.div
@@ -55,17 +55,17 @@ const Certificate = ({ username }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                 >
-                    <span style={{ fontSize: '3rem', display: 'block', marginBottom: '1rem' }}>🏳️‍🌈</span>
+                    <span style={{ fontSize: isMobile ? '2rem' : '3rem', display: 'block', marginBottom: isMobile ? '0.5rem' : '1rem' }}>🏳️‍🌈</span>
                     <h2 style={{
                         fontFamily: "'EB Garamond', serif",
-                        fontSize: '2.5rem',
-                        marginBottom: '0.5rem',
+                        fontSize: isMobile ? '1.8rem' : '2.5rem',
+                        marginBottom: isMobile ? '0.25rem' : '0.5rem',
                         textTransform: 'uppercase',
-                        letterSpacing: '2px'
+                        letterSpacing: isMobile ? '1px' : '2px'
                     }}>
                         Certificate of Gay
                     </h2>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontStyle: 'italic', marginBottom: '2rem', opacity: 0.7 }}>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: isMobile ? '0.85rem' : '1rem', fontStyle: 'italic', marginBottom: isMobile ? '1rem' : '2rem', opacity: 0.7 }}>
                         Official Recognition
                     </p>
                 </motion.div>
@@ -75,18 +75,18 @@ const Certificate = ({ username }) => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
                 >
-                    <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>This document certifies that</p>
+                    <p style={{ fontSize: isMobile ? '1rem' : '1.2rem', marginBottom: isMobile ? '0.5rem' : '1rem' }}>This document certifies that</p>
                     <h3 style={{
                         fontFamily: "'Playfair Display', serif",
-                        fontSize: '2rem',
+                        fontSize: isMobile ? '1.5rem' : '2rem',
                         borderBottom: '2px solid #111',
                         display: 'inline-block',
-                        padding: '0 2rem 0.5rem',
-                        marginBottom: '2rem'
+                        padding: isMobile ? '0 1rem 0.25rem' : '0 2rem 0.5rem',
+                        marginBottom: isMobile ? '1rem' : '2rem'
                     }}>
                         {username || "The User"}
                     </h3>
-                    <p style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                    <p style={{ fontSize: isMobile ? '1rem' : '1.2rem', lineHeight: '1.6' }}>
                         Has officially admitted to being fabulous. <br />
                         Acceptance is the first step to greatness.
                     </p>
@@ -95,12 +95,12 @@ const Certificate = ({ username }) => {
                 <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    marginTop: '4rem',
+                    marginTop: isMobile ? '2rem' : '4rem',
                     alignItems: 'end'
                 }}>
                     <div style={{ textAlign: 'left' }}>
-                        <p style={{ borderTop: '1px solid #111', width: '150px', paddingTop: '0.5rem' }}>{date}</p>
-                        <span style={{ fontSize: '0.8rem', textTransform: 'uppercase' }}>Date</span>
+                        <p style={{ borderTop: '1px solid #111', width: isMobile ? '80px' : '150px', paddingTop: '0.5rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>{date}</p>
+                        <span style={{ fontSize: isMobile ? '0.6rem' : '0.8rem', textTransform: 'uppercase' }}>Date</span>
                     </div>
 
                     <motion.div
@@ -108,8 +108,8 @@ const Certificate = ({ username }) => {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, type: 'spring' }}
                         style={{
-                            width: '80px',
-                            height: '80px',
+                            width: isMobile ? '60px' : '80px',
+                            height: isMobile ? '60px' : '80px',
                             border: '3px solid red',
                             borderRadius: '50%',
                             display: 'flex',
@@ -118,14 +118,15 @@ const Certificate = ({ username }) => {
                             color: 'red',
                             fontWeight: 'bold',
                             transform: 'rotate(-20deg)',
-                            opacity: 0.8
+                            opacity: 0.8,
+                            fontSize: isMobile ? '0.8rem' : '1rem'
                         }}>
                         VERIFIED
                     </motion.div>
 
                     <div style={{ textAlign: 'right' }}>
-                        <p style={{ borderTop: '1px solid #111', width: '150px', paddingTop: '0.5rem' }}>The Internet</p>
-                        <span style={{ fontSize: '0.8rem', textTransform: 'uppercase' }}>Authorized Signature</span>
+                        <p style={{ borderTop: '1px solid #111', width: isMobile ? '80px' : '150px', paddingTop: '0.5rem', fontSize: isMobile ? '0.9rem' : '1rem' }}>The Internet</p>
+                        <span style={{ fontSize: isMobile ? '0.6rem' : '0.8rem', textTransform: 'uppercase' }}>Authorized Signature</span>
                     </div>
                 </div>
             </div>
@@ -277,7 +278,7 @@ const Unsubscribe = () => {
                             </div>
                         </motion.div>
                     ) : (
-                        <Certificate username={username} />
+                        <Certificate username={username} isMobile={windowSize.width < 600} />
                     )}
                 </AnimatePresence>
             </div>
