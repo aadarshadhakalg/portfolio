@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const FLOW_MESSAGES = [
     {
-        text: "Are you sure? Everyone else is watching right now.",
+        text: "Are you sure you want to stop receiving my daily Instagram reels? Everyone else is watching right now.",
         btn: "Yes, I'm sure"
     },
     {
@@ -327,7 +327,7 @@ const Unsubscribe = () => {
                         color: 'var(--text-primary)'
                     }}
                 >
-                    Unsubscribe? 😢
+                    Unsubscribe from Reels? 😢
                 </motion.h1>
 
                 <AnimatePresence mode="wait">
