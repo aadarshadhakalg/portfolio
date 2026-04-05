@@ -8,6 +8,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import BlogPage from './pages/BlogPage';
 import MediaPage from './pages/MediaPage';
 import Unsubscribe from './pages/Unsubscribe';
+import BlogDetailPage from './pages/BlogDetailPage';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogDetailPage />} />
                 <Route path="/media" element={<MediaPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/unsubscribe" element={<Unsubscribe />} />
