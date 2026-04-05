@@ -9,10 +9,12 @@ import BlogPage from './pages/BlogPage';
 import MediaPage from './pages/MediaPage';
 import Unsubscribe from './pages/Unsubscribe';
 import BlogDetailPage from './pages/BlogDetailPage';
+import SEO from './components/SEO';
 
 function App() {
     return (
         <Layout>
+            <SEO />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutPage />} />

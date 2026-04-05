@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
 
 const BlogDetailPage = () => {
     const { slug } = useParams();
@@ -124,16 +125,23 @@ const BlogDetailPage = () => {
     }
 
     return (
-        <Section title={post.title} id="blog-detail">
-            <Link to="/blog" className="mono secondary-text" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.5rem' }}>← Back to all posts</Link>
-            <div style={{ marginBottom: '2rem' }} className="mono secondary-text">
-                {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-            </div>
-            {post.coverImage && post.coverImage.url && (
-                <img src={post.coverImage.url} alt={post.title} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', marginBottom: '2rem', borderRadius: '8px' }} />
-            )}
-            <div ref={contentRef} className="blog-content" dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
-        </Section>
+        <React.Fragment>
+            <SEO
+                title={post.title}
+                description={post.content?.html?.replace(/<[^>]+>/g, '').substring(0, 150)}
+                image={post.coverImage?.url}
+            />
+            <Section title={post.title} id="blog-detail">
+                <Link to="/blog" className="mono secondary-text" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.5rem' }}>← Back to all posts</Link>
+                <div style={{ marginBottom: '2rem' }} className="mono secondary-text">
+                    {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+                {post.coverImage && post.coverImage.url && (
+                    <img src={post.coverImage.url} alt={post.title} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', marginBottom: '2rem', borderRadius: '8px' }} />
+                )}
+                <div ref={contentRef} className="blog-content" dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
+            </Section>
+        </React.Fragment>
     );
 };
 
