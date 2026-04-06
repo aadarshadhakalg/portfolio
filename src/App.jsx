@@ -10,11 +10,13 @@ import MediaPage from './pages/MediaPage';
 import Unsubscribe from './pages/Unsubscribe';
 import BlogDetailPage from './pages/BlogDetailPage';
 import SEO from './components/SEO';
+import AdSense from './components/AdSense';
 
 function App() {
     return (
         <Layout>
             <SEO />
+            <AdSense />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutPage />} />
