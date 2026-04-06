@@ -20,7 +20,10 @@
     "react-router-dom": "^7.11.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^4.5.3"
+    "@vitejs/plugin-react": "^4.7.0",
+    "sharp": "^0.32.6",
+    "svgo": "^4.0.1",
+    "vite": "^5.4.21",
+    "vite-plugin-image-optimizer": "^1.1.8"
   }
 }

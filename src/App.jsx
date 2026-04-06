@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import AboutPage from './pages/AboutPage';
-import ExperiencePage from './pages/ExperiencePage';
-import ProjectsPage from './pages/ProjectsPage';
-import BlogPage from './pages/BlogPage';
-import MediaPage from './pages/MediaPage';
-import Unsubscribe from './pages/Unsubscribe';
-import BlogDetailPage from './pages/BlogDetailPage';
 import SEO from './components/SEO';
 import AdSense from './components/AdSense';
+
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const MediaPage = lazy(() => import('./pages/MediaPage'));
+const Unsubscribe = lazy(() => import('./pages/Unsubscribe'));
+const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'));
 
 function App() {
     return (
         <Layout>
             <SEO />
             <AdSense />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/experience" element={<ExperiencePage />} />
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:slug" element={<BlogDetailPage />} />
-                <Route path="/media" element={<MediaPage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/unsubscribe" element={<Unsubscribe />} />
-            </Routes>
+            <Suspense fallback={null}>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/experience" element={<ExperiencePage />} />
+                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog/:slug" element={<BlogDetailPage />} />
+                    <Route path="/media" element={<MediaPage />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
+                    <Route path="/unsubscribe" element={<Unsubscribe />} />
+                </Routes>
+            </Suspense>
         </Layout>
     );
 }

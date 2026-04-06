@@ -25,15 +25,15 @@ const Home = () => {
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
                             <div>
-                                <h4 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', opacity: 0.7 }}>CLOUD NATIVE</h4>
+                                <h3 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>CLOUD NATIVE</h3>
                                 <p>Standardizing deployments with Kubernetes and modern orchestrators.</p>
                             </div>
                             <div>
-                                <h4 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', opacity: 0.7 }}>LINUX FIRST</h4>
+                                <h3 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>LINUX FIRST</h3>
                                 <p>Leveraging the power of the open-source kernel for maximum security and performance.</p>
                             </div>
                             <div>
-                                <h4 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', opacity: 0.7 }}>AUTOMATION</h4>
+                                <h3 className="mono" style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>AUTOMATION</h3>
                                 <p>Eliminating toil through Ansible, Terraform, and custom tooling.</p>
                             </div>
                         </div>
