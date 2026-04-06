@@ -17,12 +17,17 @@ const AdSense = () => {
 
         const scriptId = 'adsense-script';
         if (!document.getElementById(scriptId)) {
-            const script = document.createElement('script');
-            script.id = scriptId;
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2840991057266725";
-            script.async = true;
-            script.crossOrigin = "anonymous";
-            document.head.appendChild(script);
+            // Delay AdSense to prioritize main content render (LCP)
+            const timeout = setTimeout(() => {
+                const script = document.createElement('script');
+                script.id = scriptId;
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2840991057266725";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+                document.head.appendChild(script);
+            }, 3000);
+
+            return () => clearTimeout(timeout);
         }
     }, [location]);
 

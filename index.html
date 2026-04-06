@@ -8,6 +8,37 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+
+  <style>
+    :root {
+      --font-serif: 'EB Garamond', serif;
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+      --bg-color: #f7f7f7;
+      --text-primary: #121212;
+      --text-secondary: #444444;
+      --accent-color: #000000;
+      --border-color: #dddddd;
+      --header-bg: #fafaf0;
+      --spacing-sm: 1rem;
+      --spacing-md: 2rem;
+      --spacing-lg: 4rem;
+      --max-width: 1000px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-color); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 400; }
+    section { max-width: var(--max-width); margin: 0 auto; padding: var(--spacing-lg) var(--spacing-md); }
+    .reveal-text { animation: reveal 1s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards; opacity: 0; transform: translateY(30px); }
+    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) { h1 { font-size: 2rem !important; } }
+  </style>
+
+  <link rel="preconnect" href="https://ep1.adtrafficquality.google">
+  <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 
   <meta name="title" content="Aadarsha Dhakal | Infrastructure Engineer" />

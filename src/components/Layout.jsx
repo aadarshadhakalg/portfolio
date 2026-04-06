@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
                     <a href="https://linkedin.com/in/aadarshadhakalg" className="mono">LinkedIn</a>
                     <a href="https://twitter.com/aadarshadhakalg" className="mono">Twitter</a>
                     <a href="https://instagram.com/aadarshadhakalg" className="mono">Instagram</a>
-                    <a href="/unsubscribe" className="mono" style={{ opacity: 0.5, fontSize: '0.75rem' }}>Unsubscribe</a>
+                    <a href="/unsubscribe" className="mono" style={{ opacity: 0.85, fontSize: '0.75rem' }}>Unsubscribe</a>
                 </div>
             </footer>
 
